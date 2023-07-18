@@ -1,18 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
+
     <TextView
+        android:id="@+id/menu_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="Menú de Desayunos" />
+
+    <EditText
+        android:id="@+id/mesa_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de mesa" />
+
+    <Button
+        android:id="@+id/calcular_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Calcular"
+        android:layout_below="@id/mesa_edit_text"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:onClick="calcularTotal" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/total_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calcular_button"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp" />
+
+
+    <ListView
+        android:id="@+id/bebida_listview"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:layout_below="@id/total_text_view"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:paddingTop="16dp"
+        android:layout_marginTop="20sp"
+        android:paddingBottom="16dp" />
+
+    <Spinner
+        android:id="@+id/comida_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:layout_below="@id/bebida_listview"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:paddingTop="16dp"
+        android:layout_marginTop="20sp"
+        android:paddingBottom="16dp" />
+
+</RelativeLayout>
